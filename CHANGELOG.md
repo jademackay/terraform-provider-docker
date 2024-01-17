@@ -1,290 +1,104 @@
 
-<a name="v3.0.2"></a>
-## [v3.0.2](https://github.com/kreuzwerker/terraform-provider-docker/compare/v3.0.1...v3.0.2) (2023-03-17)
+<a name="v2.17.0"></a>
+## [v2.17.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.16.0...v2.17.0) (2024-01-18)
+
+### Chore
+
+* add flake files
+* Prepare release v3.0.2
+* Prepare release v3.0.1
+* Prepare release v3.0.0
+* Prepare release v2.25.0
+* Prepare release v2.24.0
+* Prepare release v2.23.1
+* Prepare release v2.23.0
+* Prepare release v2.22.0
+* Prepare release v2.21.0
+* Prepare release v2.20.3
+* Prepare release v2.20.2
+* Prepare release v2.20.1
+* Reduce time to setup AccTests ([#430](https://github.com/kreuzwerker/terraform-provider-docker/issues/430))
+* Prepare release v2.20.0
+* Fix release targets in Makefile.
+* Prepare release v2.19.0
+* Prepare release v2.18.1
+* Automate changelog generation [skip ci]
+* prepare release v2.18.0
+* prepare release v2.17.0
+* Exclude examples directory from renovate.
+* remove the workflow to close stale issues and pull requests ([#371](https://github.com/kreuzwerker/terraform-provider-docker/issues/371))
 
 ### Docs
 
 * correct spelling of "networks_advanced" ([#517](https://github.com/kreuzwerker/terraform-provider-docker/issues/517))
-
-### Fix
-
-* Implement proxy support. ([#529](https://github.com/kreuzwerker/terraform-provider-docker/issues/529))
-
-
-<a name="v3.0.1"></a>
-## [v3.0.1](https://github.com/kreuzwerker/terraform-provider-docker/compare/v3.0.0...v3.0.1) (2023-01-13)
-
-### Chore
-
-* Prepare release v3.0.1
-
-### Fix
-
-* Access health of container correctly. ([#506](https://github.com/kreuzwerker/terraform-provider-docker/issues/506))
-
-
-<a name="v3.0.0"></a>
-## [v3.0.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.25.0...v3.0.0) (2023-01-13)
-
-### Chore
-
-* Prepare release v3.0.0
-
-### Docs
-
 * Update documentation.
 * Add migration guide and update README ([#502](https://github.com/kreuzwerker/terraform-provider-docker/issues/502))
+* Add documentation of remote hosts. ([#498](https://github.com/kreuzwerker/terraform-provider-docker/issues/498))
+* Fix generated website.
+* Update command typo ([#487](https://github.com/kreuzwerker/terraform-provider-docker/issues/487))
+* Fix docker config example.
+* Improve docker network usage documentation [skip-ci]
 
 ### Feat
 
 * Prepare v3 release ([#503](https://github.com/kreuzwerker/terraform-provider-docker/issues/503))
-
-
-<a name="v2.25.0"></a>
-## [v2.25.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.24.0...v2.25.0) (2023-01-05)
-
-### Chore
-
-* Prepare release v2.25.0
-
-### Docs
-
-* Add documentation of remote hosts. ([#498](https://github.com/kreuzwerker/terraform-provider-docker/issues/498))
-
-### Feat
-
 * Migrate build block to `docker_image` ([#501](https://github.com/kreuzwerker/terraform-provider-docker/issues/501))
 * Add platform attribute to docker_image resource ([#500](https://github.com/kreuzwerker/terraform-provider-docker/issues/500))
 * Add sysctl implementation to container of docker_service. ([#499](https://github.com/kreuzwerker/terraform-provider-docker/issues/499))
-
-
-<a name="v2.24.0"></a>
-## [v2.24.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.23.1...v2.24.0) (2022-12-23)
-
-### Chore
-
-* Prepare release v2.24.0
-
-### Docs
-
-* Fix generated website.
-* Update command typo ([#487](https://github.com/kreuzwerker/terraform-provider-docker/issues/487))
-
-### Feat
-
 * cgroupns support ([#497](https://github.com/kreuzwerker/terraform-provider-docker/issues/497))
 * Add triggers attribute to docker_registry_image ([#496](https://github.com/kreuzwerker/terraform-provider-docker/issues/496))
 * Support registries with disabled auth ([#494](https://github.com/kreuzwerker/terraform-provider-docker/issues/494))
 * add IPAM options block for docker networks ([#491](https://github.com/kreuzwerker/terraform-provider-docker/issues/491))
+* wait container healthy state ([#467](https://github.com/kreuzwerker/terraform-provider-docker/issues/467))
+* add docker logs data source ([#471](https://github.com/kreuzwerker/terraform-provider-docker/issues/471))
+* Configurable timeout for docker_container resource stateChangeConf ([#454](https://github.com/kreuzwerker/terraform-provider-docker/issues/454))
+* Add image_id attribute to docker_image resource. ([#450](https://github.com/kreuzwerker/terraform-provider-docker/issues/450))
+* Update used goversion to 1.18. ([#449](https://github.com/kreuzwerker/terraform-provider-docker/issues/449))
+* Implement triggers attribute for docker_image. ([#425](https://github.com/kreuzwerker/terraform-provider-docker/issues/425))
+* Implementation of `docker_tag` resource. ([#418](https://github.com/kreuzwerker/terraform-provider-docker/issues/418))
+* Implement support for insecure registries ([#414](https://github.com/kreuzwerker/terraform-provider-docker/issues/414))
+* Add gpu flag to docker_container resource ([#405](https://github.com/kreuzwerker/terraform-provider-docker/issues/405))
+* add runtime, stop_signal and stop_timeout properties to the docker_container resource ([#364](https://github.com/kreuzwerker/terraform-provider-docker/issues/364))
+* update the docker_registry_image definition to respect timeouts
+* update the docker_image definition to respect timeouts
 
 ### Fix
 
+* Implement proxy support. ([#529](https://github.com/kreuzwerker/terraform-provider-docker/issues/529))
+* Access health of container correctly. ([#506](https://github.com/kreuzwerker/terraform-provider-docker/issues/506))
 * Pin data source specific tag test to older tag.
+* Update shasum of busybox:1.35.0 tag in test.
+* Handle Auth Header Scopes ([#482](https://github.com/kreuzwerker/terraform-provider-docker/issues/482))
+* Set OS_ARCH from GOHOSTOS and GOHOSTARCH ([#477](https://github.com/kreuzwerker/terraform-provider-docker/issues/477))
+* Update shasum of busybox:1.35.0 tag in test.
+* Update shasum of busybox:1.35.0 tag
+* Correct provider name to match the public registry ([#462](https://github.com/kreuzwerker/terraform-provider-docker/issues/462))
+* oauth authorization support for azurecr ([#451](https://github.com/kreuzwerker/terraform-provider-docker/issues/451))
+* Replace deprecated .latest attribute with new image_id. ([#453](https://github.com/kreuzwerker/terraform-provider-docker/issues/453))
+* Remove reading part of docker_tag resource. ([#448](https://github.com/kreuzwerker/terraform-provider-docker/issues/448))
+* Fix repo_digest value for DockerImageDatasource test.
+* Docker Registry Image data source use HEAD request to query image digest ([#433](https://github.com/kreuzwerker/terraform-provider-docker/issues/433))
+* Adding Support for Windows Paths in Bash ([#438](https://github.com/kreuzwerker/terraform-provider-docker/issues/438))
+* Check the operating system for determining the default Docker socket ([#427](https://github.com/kreuzwerker/terraform-provider-docker/issues/427))
+* Add ForceTrue to docker_image name attribute. ([#421](https://github.com/kreuzwerker/terraform-provider-docker/issues/421))
+* Enable authentication to multiple registries again. ([#400](https://github.com/kreuzwerker/terraform-provider-docker/issues/400))
+* ECR authentication ([#409](https://github.com/kreuzwerker/terraform-provider-docker/issues/409))
+* Improve searchLocalImages error handling. ([#407](https://github.com/kreuzwerker/terraform-provider-docker/issues/407))
+* Throw errors when any part of docker config file handling goes wrong. ([#406](https://github.com/kreuzwerker/terraform-provider-docker/issues/406))
+* Enables having a Dockerfile outside the context ([#402](https://github.com/kreuzwerker/terraform-provider-docker/issues/402))
+* Correctly handle build files and context for docker_registry_image ([#398](https://github.com/kreuzwerker/terraform-provider-docker/issues/398))
+* Switch to proper go tools mechanism to fix website-* workflows. ([#399](https://github.com/kreuzwerker/terraform-provider-docker/issues/399))
+* compare relative paths when excluding, fixes kreuzwerker[#280](https://github.com/kreuzwerker/terraform-provider-docker/issues/280) ([#397](https://github.com/kreuzwerker/terraform-provider-docker/issues/397))
+* update go package files directly on master to fix build.
+* correct authentication for ghcr.io registry([#349](https://github.com/kreuzwerker/terraform-provider-docker/issues/349))
 
 ### Tests
 
 * Add test for parsing auth headers.
 
-
-<a name="v2.23.1"></a>
-## [v2.23.1](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.23.0...v2.23.1) (2022-11-23)
-
-### Chore
-
-* Prepare release v2.23.1
-
-### Fix
-
-* Update shasum of busybox:1.35.0 tag in test.
-* Handle Auth Header Scopes ([#482](https://github.com/kreuzwerker/terraform-provider-docker/issues/482))
-* Set OS_ARCH from GOHOSTOS and GOHOSTARCH ([#477](https://github.com/kreuzwerker/terraform-provider-docker/issues/477))
-
-
-<a name="v2.23.0"></a>
-## [v2.23.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.22.0...v2.23.0) (2022-11-02)
-
-### Chore
-
-* Prepare release v2.23.0
-
-### Feat
-
-* wait container healthy state ([#467](https://github.com/kreuzwerker/terraform-provider-docker/issues/467))
-* add docker logs data source ([#471](https://github.com/kreuzwerker/terraform-provider-docker/issues/471))
-
-### Fix
-
-* Update shasum of busybox:1.35.0 tag in test.
-* Update shasum of busybox:1.35.0 tag
-* Correct provider name to match the public registry ([#462](https://github.com/kreuzwerker/terraform-provider-docker/issues/462))
-
-
-<a name="v2.22.0"></a>
-## [v2.22.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.21.0...v2.22.0) (2022-09-20)
-
-### Chore
-
-* Prepare release v2.22.0
-
-### Feat
-
-* Configurable timeout for docker_container resource stateChangeConf ([#454](https://github.com/kreuzwerker/terraform-provider-docker/issues/454))
-
-### Fix
-
-* oauth authorization support for azurecr ([#451](https://github.com/kreuzwerker/terraform-provider-docker/issues/451))
-
-
-<a name="v2.21.0"></a>
-## [v2.21.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.20.3...v2.21.0) (2022-09-05)
-
-### Chore
-
-* Prepare release v2.21.0
-
-### Docs
-
-* Fix docker config example.
-
-### Feat
-
-* Add image_id attribute to docker_image resource. ([#450](https://github.com/kreuzwerker/terraform-provider-docker/issues/450))
-* Update used goversion to 1.18. ([#449](https://github.com/kreuzwerker/terraform-provider-docker/issues/449))
-
-### Fix
-
-* Replace deprecated .latest attribute with new image_id. ([#453](https://github.com/kreuzwerker/terraform-provider-docker/issues/453))
-* Remove reading part of docker_tag resource. ([#448](https://github.com/kreuzwerker/terraform-provider-docker/issues/448))
-* Fix repo_digest value for DockerImageDatasource test.
-
-
-<a name="v2.20.3"></a>
-## [v2.20.3](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.20.2...v2.20.3) (2022-08-31)
-
-### Chore
-
-* Prepare release v2.20.3
-
-### Fix
-
-* Docker Registry Image data source use HEAD request to query image digest ([#433](https://github.com/kreuzwerker/terraform-provider-docker/issues/433))
-* Adding Support for Windows Paths in Bash ([#438](https://github.com/kreuzwerker/terraform-provider-docker/issues/438))
-
-
-<a name="v2.20.2"></a>
-## [v2.20.2](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.20.1...v2.20.2) (2022-08-10)
-
-### Chore
-
-* Prepare release v2.20.2
-
-### Fix
-
-* Check the operating system for determining the default Docker socket ([#427](https://github.com/kreuzwerker/terraform-provider-docker/issues/427))
-
 ### Reverts
 
 * fix(deps): update module github.com/golangci/golangci-lint to v1.48.0 ([#423](https://github.com/kreuzwerker/terraform-provider-docker/issues/423))
-
-
-<a name="v2.20.1"></a>
-## [v2.20.1](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.20.0...v2.20.1) (2022-08-10)
-
-### Chore
-
-* Prepare release v2.20.1
-* Reduce time to setup AccTests ([#430](https://github.com/kreuzwerker/terraform-provider-docker/issues/430))
-
-### Docs
-
-* Improve docker network usage documentation [skip-ci]
-
-### Feat
-
-* Implement triggers attribute for docker_image. ([#425](https://github.com/kreuzwerker/terraform-provider-docker/issues/425))
-
-### Fix
-
-* Add ForceTrue to docker_image name attribute. ([#421](https://github.com/kreuzwerker/terraform-provider-docker/issues/421))
-
-
-<a name="v2.20.0"></a>
-## [v2.20.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.19.0...v2.20.0) (2022-07-28)
-
-### Chore
-
-* Prepare release v2.20.0
-* Fix release targets in Makefile.
-
-### Feat
-
-* Implementation of `docker_tag` resource. ([#418](https://github.com/kreuzwerker/terraform-provider-docker/issues/418))
-* Implement support for insecure registries ([#414](https://github.com/kreuzwerker/terraform-provider-docker/issues/414))
-
-
-<a name="v2.19.0"></a>
-## [v2.19.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.18.1...v2.19.0) (2022-07-15)
-
-### Chore
-
-* Prepare release v2.19.0
-
-### Feat
-
-* Add gpu flag to docker_container resource ([#405](https://github.com/kreuzwerker/terraform-provider-docker/issues/405))
-
-### Fix
-
-* Enable authentication to multiple registries again. ([#400](https://github.com/kreuzwerker/terraform-provider-docker/issues/400))
-* ECR authentication ([#409](https://github.com/kreuzwerker/terraform-provider-docker/issues/409))
-
-
-<a name="v2.18.1"></a>
-## [v2.18.1](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.18.0...v2.18.1) (2022-07-14)
-
-### Chore
-
-* Prepare release v2.18.1
-* Automate changelog generation [skip ci]
-
-### Fix
-
-* Improve searchLocalImages error handling. ([#407](https://github.com/kreuzwerker/terraform-provider-docker/issues/407))
-* Throw errors when any part of docker config file handling goes wrong. ([#406](https://github.com/kreuzwerker/terraform-provider-docker/issues/406))
-* Enables having a Dockerfile outside the context ([#402](https://github.com/kreuzwerker/terraform-provider-docker/issues/402))
-
-
-<a name="v2.18.0"></a>
-## [v2.18.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.17.0...v2.18.0) (2022-07-11)
-
-### Chore
-
-* prepare release v2.18.0
-
-### Feat
-
-* add runtime, stop_signal and stop_timeout properties to the docker_container resource ([#364](https://github.com/kreuzwerker/terraform-provider-docker/issues/364))
-
-### Fix
-
-* Correctly handle build files and context for docker_registry_image ([#398](https://github.com/kreuzwerker/terraform-provider-docker/issues/398))
-* Switch to proper go tools mechanism to fix website-* workflows. ([#399](https://github.com/kreuzwerker/terraform-provider-docker/issues/399))
-* compare relative paths when excluding, fixes kreuzwerker[#280](https://github.com/kreuzwerker/terraform-provider-docker/issues/280) ([#397](https://github.com/kreuzwerker/terraform-provider-docker/issues/397))
-
-
-<a name="v2.17.0"></a>
-## [v2.17.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.16.0...v2.17.0) (2022-06-23)
-
-### Chore
-
-* prepare release v2.17.0
-* Exclude examples directory from renovate.
-* remove the workflow to close stale issues and pull requests ([#371](https://github.com/kreuzwerker/terraform-provider-docker/issues/371))
-
-### Fix
-
-* update go package files directly on master to fix build.
-* correct authentication for ghcr.io registry([#349](https://github.com/kreuzwerker/terraform-provider-docker/issues/349))
 
 
 <a name="v2.16.0"></a>
