@@ -1,9 +1,18 @@
 
+<a name="v2.18.0"></a>
+## [v2.18.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.17.0...v2.18.0) (2024-01-18)
+
+### Chore
+
+* tweak Makefile NAMESPACE and supress website from release
+
+
 <a name="v2.17.0"></a>
 ## [v2.17.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.16.0...v2.17.0) (2024-01-18)
 
 ### Chore
 
+* Prepare release v2.17.0
 * add flake files
 * Prepare release v3.0.2
 * Prepare release v3.0.1
