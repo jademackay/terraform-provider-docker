@@ -30,14 +30,15 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{ env.GO_VERSION }}
-      - name: Import GPG private key
-        run: echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
-      # - name: Import GPG key
-      #   id: import_gpg
-      #   uses: paultyng/ghaction-import-gpg@v2.1.0        
-      #   env:
-      #     GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-      #     PASSPHRASE: ${{ secrets.PASSPHRASE }}
+      # - name: Import GPG private key
+      #   id: import_gpg        
+      #   run: echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
+      - name: Import GPG key
+        id: import_gpg
+        uses: paultyng/ghaction-import-gpg@v2.1.0        
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+#          PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
