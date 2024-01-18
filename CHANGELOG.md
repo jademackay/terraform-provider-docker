@@ -1,9 +1,18 @@
 
+<a name="v2.22.0"></a>
+## [v2.22.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.21.0...v2.22.0) (2024-01-18)
+
+### Chore
+
+* release.yml gpg
+
+
 <a name="v2.21.0"></a>
 ## [v2.21.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.20.0...v2.21.0) (2024-01-18)
 
 ### Chore
 
+* Prepare release v2.21.0
 * release.yml gpg
 
 
