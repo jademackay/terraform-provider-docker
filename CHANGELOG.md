@@ -1,9 +1,20 @@
 
+<a name="v2.20.0"></a>
+## [v2.20.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.19.0...v2.20.0) (2024-01-18)
+
+### Chore
+
+* release.yml gpg
+* release.yml gpg
+* comment paths-ignore
+
+
 <a name="v2.19.0"></a>
 ## [v2.19.0](https://github.com/kreuzwerker/terraform-provider-docker/compare/v2.18.0...v2.19.0) (2024-01-18)
 
 ### Chore
 
+* Prepare release v2.19.0
 * secrets.GORELEASER_TOKEN to secrets.GITHUB_TOKEN
 
 
