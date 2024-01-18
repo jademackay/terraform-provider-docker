@@ -9,7 +9,45 @@
 # You will need to pass the `--batch` flag to `gpg` in your signing step
 # in `goreleaser` to indicate this is being used in a non-interactive mode.
 #
+# name: Release
+# on:
+#   push:
+#     tags:
+#       - "v*"
+
+# env:
+#   GO_VERSION: "1.18"
+
+# jobs:
+#   goreleaser:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Unshallow
+#         run: git fetch --prune --unshallow
+#       - name: Set up Go
+#         uses: actions/setup-go@v3
+#         with:
+#           go-version: ${{ env.GO_VERSION }}
+#       - name: Import GPG key
+#         id: import_gpg
+#         uses: paultyng/ghaction-import-gpg@v2.1.0        
+#         env:
+#           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+#           PASSPHRASE: ${{ secrets.PASSPHRASE }}
+#       - name: Run GoReleaser
+#         uses: goreleaser/goreleaser-action@v4
+#         with:
+#           version: latest
+#           args: release --rm-dist
+#         env:
+#           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
 name: Release
+
 on:
   push:
     tags:
@@ -30,15 +68,16 @@ jobs:
         uses: actions/setup-go@v3
         with:
           go-version: ${{ env.GO_VERSION }}
-      # - name: Import GPG private key
-      #   id: import_gpg        
-      #   run: echo "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --import
       - name: Import GPG key
         id: import_gpg
         uses: paultyng/ghaction-import-gpg@v2.1.0        
+        with:
+          git_user_signingkey: false
+          git_commit_gpgsign: false
+          git_tag_gpgsign: false
+          git_push_gpgsign: false
         env:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          PASSPHRASE: ${{ secrets.PASSPHRASE }}
       - name: Run GoReleaser
         uses: goreleaser/goreleaser-action@v4
         with:
@@ -47,3 +86,4 @@ jobs:
         env:
           GPG_FINGERPRINT: ${{ steps.import_gpg.outputs.fingerprint }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
